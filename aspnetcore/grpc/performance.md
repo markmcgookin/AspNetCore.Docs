@@ -240,7 +240,7 @@ Most .NET APIs have `ReadOnlyMemory<byte>` and `byte[]` overloads, so `ByteStrin
 var byteString = GetByteString();
 
 ByteArrayContent content;
-if (MemoryMarshal.TryGetArray<byte>(byteString.Memory, out var segment))
+if (MemoryMarshal.TryGetArray(byteString.Memory, out var segment))
 {
     content = new ByteArrayContent(segment.Array, segment.Offset, segment.Count);
 }
